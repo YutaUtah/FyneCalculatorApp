@@ -1,9 +1,8 @@
 package main
 
 import (
-	"strconv"
-
 	"fmt"
+	"strconv"
 
 	"fyne.io/fyne"
 	"fyne.io/fyne/app"
@@ -75,7 +74,6 @@ func main() {
 			defer func() {
 				if num == 0 {
 					p := recover()
-					fmt.Println(p)
 					if p != nil {
 						panic("not divisible by 0")
 					}
@@ -105,14 +103,10 @@ func main() {
 
 		if err == nil {
 			if data.flg {
-				fmt.Println("inside InputNum second input")
-				fmt.Println("calculate(num) num", num)
 				calculate(num)
 				topNum.SetText(strconv.Itoa(data.mem))
 			} else {
 				data.mem = displayNum
-				fmt.Println("inside InputNum first input")
-				fmt.Println(data.mem)
 				topNum.SetText(strconv.Itoa(displayNum))
 			}
 		}
